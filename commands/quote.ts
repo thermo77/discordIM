@@ -1,4 +1,3 @@
-
 import { AttachmentBuilder } from 'discord.js';
 import Canvas from 'canvas';
 
@@ -10,11 +9,11 @@ module.exports = {
             return
         }
 
-        var img = message.author.displayAvatarURL({ extension: 'png', forceStatic: true, size: 256 });
+        var userAvatarUrl = message.author.displayAvatarURL({ extension: 'png', forceStatic: true, size: 256 });
         
         var canvas = Canvas.createCanvas(850,400);
         var ctx = canvas.getContext("2d");
-        var image = await Canvas.loadImage(img);
+        var image = await Canvas.loadImage(userAvatarUrl);
 
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, canvas.width, canvas.height);

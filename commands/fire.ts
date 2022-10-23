@@ -3,9 +3,9 @@ import Canvas from 'canvas';
 
 module.exports = {
 	name: 'fire',
-	async run(message:any, commandArgs:any, lastImage:any) {
-        var user = message.mentions.members.first();
-
+	async run(message:any, lastImage:any) {
+        var user = message.author;
+				
         if(lastImage.url === null) {
             lastImage.url = user.displayAvatarURL({ extension: 'png', forceStatic: true, size: 512 });
             lastImage.width = 512;

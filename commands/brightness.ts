@@ -4,9 +4,8 @@ import Canvas from 'canvas';
 module.exports = {
 	name: 'brightness',
 	async run(message:any, commandArgs:any, lastImage:any) {
-        var user = message.mentions.members.first();
-        var value = 0;
-
+        var user = message.author;
+				
         if(lastImage.url === null) {
             lastImage.url = user.displayAvatarURL({ extension: 'png', forceStatic: true, size: 512 });
             lastImage.width = 512;
@@ -25,6 +24,7 @@ module.exports = {
         var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
         var i;
+        var value = 0;
         for(i = 0; i < imageData.data.length; i += 4) {
             imageData.data[i] = imageData.data[i] + value;
             imageData.data[i+1] = imageData.data[i+1] + value;

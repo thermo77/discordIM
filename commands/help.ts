@@ -7,10 +7,10 @@ module.exports = {
         .setColor('Blue')
         .addFields(
             { name: '.help', value: 'displays a list of commands', inline: true },
-            { name: '.say', value: 'prints out user provided text', inline: true },
+            { name: '.toptext', value: 'writes user provided text at the top of the last image sent', inline: true },
+            { name: '.bottomtext', value: 'writes user provided text at the bottom of last image sent', inline: true},
             { name: '.quote', value: 'makes quote from user provided text', inline: true },
             { name: '.avatar', value: 'finds the avatar of a given user', inline: true },
-            { name: '.text', value: 'writes user provided text on the last image sent', inline: true},
             { name: '.invert', value: 'inverts the last image sent', inline: true },
             { name: '.brightness', value: 'changes the brightness of the last image sent', inline: true },
             { name: '.grayscale', value: 'grayscales the last image sent', inline: true },
